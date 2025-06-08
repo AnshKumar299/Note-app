@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#App{
+    padding-top: 3rem;
+    margin-bottom: 0rem;
+    justify-content: space-around;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(24, 10, 52);
+    background-image: repeating-linear-gradient(to bottom right, rgb(24, 10, 52) 51%, black 51.8%);
+    color: white;
+    display: grid;
+    grid-template-areas:
+    "head head"
+    "btn nlist"
+    "foot foot";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10fr 30fr 1fr;                
+}
+#footer{
+    grid-area: foot;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    padding-bottom: .4rem;
+    background-color: rgb(0, 0, 77);
+}
+#main-head{
+    grid-area: head;
+    display: flex;
+    justify-content: center;
+    margin: 5rem;
+    align-items: center;
+    margin-top: 0rem;
+    font-family: "Montserrat Underline",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 4rem;
+    font-style: normal;
+    text-shadow: 0px 0px 6px white;
+}
+#add-button-div{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    grid-area: btn;
+}
+
+#add-button{
+    background-image: linear-gradient(to bottom right, rgb(26, 26, 207) 0%, rgb(235, 22, 213) 100%);
+    color: rgb(0, 0, 0);
+    text-decoration: double;
+    font-family:"Encode Sans Expanded",sans-serif;
+    font-size: 0.8rem;
+    box-shadow: 2px 2p;
+    height: 12rem;
+    width: 12rem;
+    border-radius: 20px;
+}
+#add-button:hover{
+    cursor:pointer;
+}
+.note-list{
+    overflow: scroll;
+    grid-area: nlist;
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgb(64, 64, 64);
+    border-radius: 10px;
+    overflow-x: hidden;
+    padding: 6px;
+    margin-right: 1;
+    padding-left: 1.4rem;
+}
+#noteless{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(158, 158, 158);
+    margin-bottom: 2px;
+}
+
+#note-form{
+    height: 40%;
+    width:90%;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+#title-input{
+    width: 100%;
+    background-color: rgba(29, 52, 204, 0.652);
+    height: 30%;
+    padding: .4rem;
+    border: 2px solid rgba(255, 255, 255, 0.69);
+}
+#text-input{
+    width: 100%;
+    background-color: rgba(195, 33, 195, 0.833);
+    padding: .4rem;
+    border: 2px solid rgba(255, 255, 255, 0.69);
+}
+#title-input::placeholder{
+    color: black;
+    font-size: larger;
+    opacity: 1;
+}
+#text-input::placeholder{
+    color: black;
+    font-size: larger;
+    opacity: 1;
+}
+
+#buttons{
+    display: flex;
+    justify-content: space-between;
+    height: 20%;
+}
+
+#Save{
+    width: 5rem;
+    justify-self: center;
+    background-image: linear-gradient(to bottom right, rgb(0, 137, 0) 40%, white 120%);
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    box-shadow: 0px 0px 4px rgb(1, 78, 1);
+}
+#Cancel{
+    width: 5rem;
+    background-image: linear-gradient(to bottom right, rgb(147, 4, 4) 40%, white 120%);
+    color: white;
+    font-size: medium;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 0px 0px 4px rgb(71, 1, 1);
+}
+
+@media screen and (max-width: 500px) {
+  #App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* ensures full screen height */
+    width: 100vw;
+    overflow-y: auto; /* can scroll if content overflows */
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  #main-head {
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+  }
+
+  #add-button-div {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  #add-button {
+    width: 60vw;
+    height: 10rem;
+    font-size: 1rem;
+  }
+
+  .note-list {
+    width: 95vw;
+    height: 200%;
+    margin: 0;
+  }
+
+  #note-form {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  #title-input, #text-input {
+    font-size: 1rem;
+    height: auto;
+  }
+
+  #footer {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+}
